@@ -69,11 +69,11 @@
 
   <target name="dist" depends="preprocess" description="generate the distribution">
     <tstamp/>
-    <ant dir="ext/ant"/>
+    <ant dir="ext/ant-javacard"/>
     <!-- Create the distribution directory -->
-    <taskdef name="javacard" classname="pro.javacard.ant.JavaCard" classpath="ext/ant/ant-javacard.jar"/>
+    <taskdef name="javacard" classname="pro.javacard.ant.JavaCard" classpath="ext/ant-javacard/ant-javacard.jar"/>
     <javacard>
-      <cap aid="a0:00:00:03:08:00:00:10" output="bin/PivApplet.cap" sources="src-gen" classes="bin" version="1.0">
+      <cap aid="a0:00:00:03:08:00:00:10" output="bin/PivApplet.cap" sources="src-gen" classes="bin" version="1.0" targetsdk="3.0.4">
         <applet class="net.cooperi.pivapplet.PivApplet" aid="a0:00:00:03:08:00:00:10:00:01:00"/>
       </cap>
     </javacard>
